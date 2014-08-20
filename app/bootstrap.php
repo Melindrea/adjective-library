@@ -6,8 +6,8 @@ $app = new \Slim\Slim(array(
     'debug' => false
 ));
 
-// $ioc = new \App\Ioc($app);
-// $ioc->init();
+$ioc = new \App\Ioc($app);
+$ioc->init();
 
 // $conf = new \App\Conf($app);
 // $conf->init();

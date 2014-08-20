@@ -14,8 +14,8 @@ class TestCase extends \PHPUnit_Framework_TestCase
             'mode' => 'testing'
         ));
 
-        // $ioc = new \App\Ioc($app);
-        // $ioc->init();
+        $ioc = new \App\Ioc($app);
+        $ioc->init();
 
         // $conf = new \App\Conf($app);
         // $conf->init();
