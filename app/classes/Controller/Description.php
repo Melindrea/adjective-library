@@ -15,6 +15,7 @@ class Description
     public function find($id)
     {
         return DescriptionModel::find($id);
+        // Repository istället för model
     }
 
     public function findAll()
