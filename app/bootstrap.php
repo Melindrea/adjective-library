@@ -1,4 +1,5 @@
 <?php
+
 require '../vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
@@ -11,6 +12,7 @@ $app = new \Slim\Slim(array(
 // $conf = new \App\Conf($app);
 // $conf->init();
 
-// include 'routes/linkReport.php';
+// Include routes
+include 'routes.php';
 
 $app->run();
