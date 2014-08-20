@@ -1,0 +1,19 @@
+{
+    "name": "Melindrea/adjective-library",
+    "description": "API to fetch/update descriptions based on age/nationality/ethnicity/etc",
+    "require": {
+        "slim/slim": "2.*",
+        "illuminate/database": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marie Hogebrandt",
+            "email": "iam@mariehogebrandt.se"
+        }
+    ]
+}

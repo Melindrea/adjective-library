@@ -27,3 +27,5 @@ node_modules
 *.sublime-workspace
 *.tmp
 .sass-cache
+
+/vendor/
