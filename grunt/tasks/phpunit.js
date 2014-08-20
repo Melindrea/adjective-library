@@ -3,11 +3,11 @@ module.exports = function(grunt) {
 
     grunt.config('phpunit', {
         classes: {
-            dir: '<%= config.app %>/tests'
+            dir: '<%= config.tests %>'
         },
         options: {
             bin: 'vendor/bin/phpunit',
-            bootstrap: 'app/tests/bootstrap.php',
+            bootstrap: '<%= config.tests %>/bootstrap.php',
             staticBackup: false,
             colors: true,
             noGlobalsBackup: false

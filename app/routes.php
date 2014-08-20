@@ -25,11 +25,6 @@ $app->delete('/descriptions/:id', function ($id) {
     echo sprintf('Deletes Description %d', $id);
 });
 
-// GET description based on id
-$app->delete('/description/:id', function ($id) {
-    echo sprintf('Deletes Description %d', $id);
-});
-
 
 /*
 Action  HTTP Verb   URL

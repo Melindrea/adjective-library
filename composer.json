@@ -22,7 +22,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "app/lib"
+            "App\\": "app/lib",
+            "Test\\": "app/tests"
         }
     }
 

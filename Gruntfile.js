@@ -16,6 +16,7 @@ module.exports = function (grunt) {
             path: 'http://api.adjective-library.com',
 
             app: 'app',
+            tests: 'app/tests',
             public: 'public',
             tmp: '.tmp',
 
