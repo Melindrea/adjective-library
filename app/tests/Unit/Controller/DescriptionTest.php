@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Controller;
+namespace Test\Unit\Controller;
 use \App\Controller\Description as Description;
 
 class DescriptionTest extends \Test\TestCase

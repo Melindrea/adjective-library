@@ -2,55 +2,39 @@
 
 namespace App\Model;
 
-class Description
+class Description extends \Illuminate\Database\Eloquent\Model
 {
-    public static function find($id)
+    protected $guarded = array('id');
+
+    /**
+     * Gender identity relationship
+     */
+    public function gender()
     {
-        return self::mockup($id);
+        return $this->belongsTo('\App\Model\Gender');
     }
 
-    public static function all()
+    /**
+     * Age relationship
+     */
+    public function age()
     {
-        return self::mockups();
+        return $this->belongsTo('\App\Model\Age');
     }
 
-    public function save()
+    /**
+     * Territory of Origin relationship
+     */
+    public function origin()
     {
-        return;
+        return $this->belongsTo('\App\Model\Territory');
     }
 
-    public static function create($params)
+    /**
+     * Territory of Residence relationship
+     */
+    public function residence()
     {
-        $mockup = self::mockup(1);
-
-        foreach ($params as $key => $value) {
-            $mockup->$key = $value;
-        }
-
-        return $mockup;
-    }
-
-    public static function destroy($id)
-    {
-        return;
-    }
-
-    protected function mockup($id)
-    {
-        $mockup = new self();
-        $mockup->id = $id;
-
-        return $mockup;
-    }
-
-    protected function mockups($ids = array(1, 2, 3, 4))
-    {
-        $mockups = array();
-
-        foreach ($ids as $id) {
-            $mockups[] = self::mockup($id);
-        }
-
-        return $mockups;
+        return $this->belongsTo('\App\Model\Territory');
     }
 }

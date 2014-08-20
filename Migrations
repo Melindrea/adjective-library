@@ -1,0 +1,44 @@
+CREATE TABLE descriptions(id INTEGER PRIMARY KEY NOT NULL, gender_id INTEGER, age_id INTEGER, origin_id INTEGER, residence_id INTEGER, ethnicity TEXT, created_at INTEGER, updated_at INTEGER);
+CREATE TABLE genders(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+CREATE TABLE ages(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+CREATE TABLE territories(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+CREATE TABLE hairadjectives(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+CREATE TABLE eyeadjectives(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+CREATE TABLE skinadjectives(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+CREATE TABLE buildadjectives(id INTEGER PRIMARY KEY NOT NULL, name VARCHAR(256), created_at INTEGER, updated_at INTEGER);
+
+CREATE TABLE description_hairadjective (
+  description_id INTEGER NOT NULL,
+  hairadjective_id INTEGER NOT NULL,
+  PRIMARY KEY (description_id, hairadjective_id)
+);
+CREATE TABLE description_eyeadjective (
+  description_id INTEGER NOT NULL,
+  eyeadjective_id INTEGER NOT NULL,
+  PRIMARY KEY (description_id, eyeadjective_id)
+);
+CREATE TABLE description_skinadjective (
+  description_id INTEGER NOT NULL,
+  skinadjective_id INTEGER NOT NULL,
+  PRIMARY KEY (description_id, skinadjective_id)
+);
+CREATE TABLE buildadjective_description (
+  buildadjective_id INTEGER NOT NULL,
+  description_id INTEGER NOT NULL,
+  PRIMARY KEY (description_id, buildadjective_id)
+);
+
+
+
+INSERT INTO descriptions(id, gender_id, age_id, origin_id, residence_id, ethnicity) VALUES (null, 1, 1, 1, 1, 'Some stuff');
+INSERT INTO genders(id, name) VALUES (null, 'female');
+INSERT INTO ages(id, name) VALUES (null, '30s');
+INSERT INTO territories(id, name) VALUES (null, 'Sweden');
+INSERT INTO hairadjectives(id, name) VALUES (null, 'Dark brown');
+INSERT INTO eyeadjectives(id, name) VALUES (null, 'Dark blue');
+INSERT INTO skinadjectivse(id, name) VALUES (null, 'Pale');
+INSERT INTO buildadjectives(id, name) VALUES (null, 'Chunky');
+INSERT INTO description_hairadjective(description_id, hairadjective_id) VALUES (1, 1);
+INSERT INTO description_eyeadjective(description_id, eyeadjective_id) VALUES (1, 1);
+INSERT INTO description_skinadjective(description_id, skinadjective_id) VALUES (1, 1);
+INSERT INTO buildadjective_description(buildadjective_id, description_id) VALUES (1, 1);
