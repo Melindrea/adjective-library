@@ -26,5 +26,8 @@
   "engines": {
     "node": ">=0.10.26"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "dependencies": "npm install && bundle update && php composer.phar update"
+  }
 }
