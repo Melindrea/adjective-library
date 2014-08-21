@@ -7,8 +7,7 @@
 $app->get('/descriptions/:id', function ($id) use ($app) {
     $controller = $app->ioc->make('\App\Controller\Description');
     $result = $controller->find($id);
-    echo $result->toJson() . PHP_EOL;
-    echo $result->ethnicity;
+    echo $result->toJson();
 })->name('description.find');
 
 // Find All    GET /descriptions

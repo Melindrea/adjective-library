@@ -1,31 +1,31 @@
 <?php
 
 namespace App\Controller;
-use \App\Model\Description as DescriptionModel;
+use \App\Storage\Description\DescriptionRepository as DescriptionRepository;
 
 class Description
 {
     protected $app;
 
-    public function __construct(\Slim\Slim $app)
+    public function __construct(\Slim\Slim $app, DescriptionRepository $description)
     {
         $this->app = $app;
+        $this->description = $description;
     }
 
     public function find($id)
     {
-        return DescriptionModel::find($id);
-        // Repository istället för model
+        return $this->description->find($id);
     }
 
     public function findAll()
     {
-        return DescriptionModel::all();
+        return $this->description->all();
     }
 
     public function update($id, $params)
     {
-        $description = DescriptionModel::find($id);
+        $description = $this->description->find($id);
 
         foreach ($params as $key => $value) {
             $description->$key = $value;
@@ -38,7 +38,7 @@ class Description
 
     public function delete($id)
     {
-        $description = DescriptionModel::destroy($id);
+        $description = $this->description->destroy($id);
 
         return new \StdClass();
     }

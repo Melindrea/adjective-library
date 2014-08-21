@@ -20,9 +20,15 @@ class Ioc
 
     public function makeBindings()
     {
-        $this->app->ioc->bind('\App\Controller\Description', function()
+        $this->app->ioc->bind('\App\Controller\Description', function ()
         {
-            return new \App\Controller\Description($this->app);
+            $repository = new \App\Storage\Description\EloquentDescriptionRepository();
+            return new \App\Controller\Description($this->app, $repository);
         });
+
+        $this->app->ioc->bind(
+            '\App\Storage\Description\DescriptionRepository',
+            '\App\Storage\Description\EloquentDescriptionRepository'
+        );
     }
 }
